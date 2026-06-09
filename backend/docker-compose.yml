@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      # Override SECRET_KEY with a strong random value in production
+      # - SECRET_KEY=change-me-in-production
+      # - ACCESS_TOKEN_EXPIRE_SECONDS=300
+    restart: unless-stopped
